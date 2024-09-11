@@ -26,7 +26,7 @@ jobs:
         run: ls -l && ls -l ..
         working-directory: ./build
       - name: Static Analysis
-        run: make analysis
+        run: make cppcheck analysis
         working-directory: ./build
       - name: Format Code
         run: |

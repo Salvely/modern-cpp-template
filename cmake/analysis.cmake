@@ -1,6 +1,6 @@
 # Make sure cppcheck binary is available
 if( NOT CPPCHECK_FOUND )
-    find_package(CppCheck)
+    find_package(CPPCHECK)
 endif()
 
 # add a target for CppCheck
