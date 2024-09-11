@@ -105,7 +105,7 @@ add_test(NAME google_test COMMAND google_test WORKING_DIRECTORY ${PROJECT_SOURCE
 # add_subdirectory(bin)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 include(Doxygen)
-find_package(doxygen)
+find_package(Doxygen)
 Doxygen(src docs)
 
 # pack the project

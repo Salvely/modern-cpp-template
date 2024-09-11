@@ -25,22 +25,22 @@ jobs:
       - name: Print build files
         run: ls -l && ls -l ..
         working-directory: ./build
-      # - name: Static Analysis
-      #   run: make analysis
-      #   working-directory: ./build
-      # - name: Format Code
-      #   run: |
-      #     chmod +rwx ../cmake/scripts/clang-format-check-changed.py
-      #     make format
-      #     make format-check
-      #     make format-check-changed
-      #   working-directory: ./build
-      # - name: Unit Testing
-      #   run: make test
-      #   working-directory: ./build
-      # - name: Documentation
-      #   run: make doxygen
-      #   working-directory: ./build
-      # - name: Installation
-      #   run: make install
-      #   working-directory: ./build
+      - name: Static Analysis
+        run: make analysis
+        working-directory: ./build
+      - name: Format Code
+        run: |
+          chmod +rwx ../cmake/scripts/clang-format-check-changed.py
+          make format
+          make format-check
+          make format-check-changed
+        working-directory: ./build
+      - name: Unit Testing
+        run: make test
+        working-directory: ./build
+      - name: Documentation
+        run: make doxygen
+        working-directory: ./build
+      - name: Installation
+        run: make install
+        working-directory: ./build
