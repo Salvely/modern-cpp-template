@@ -90,7 +90,7 @@ add_executable(google_test ${PROJECT_SOURCE_DIR}/test/googletest_test.cpp)
 # include the directories
 target_include_directories(google_test PUBLIC ${PROJECT_SOURCE_DIR}/include/static)
 # link the library
-target_link_libraries(google_test google_test_lib PRIVATE pthread gtest gtest_main)
+target_link_libraries(google_test google_test_lib pthread gtest gtest_main)
 add_test(NAME google_test COMMAND google_test WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 
 # add doxygen to the project
