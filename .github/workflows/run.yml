@@ -10,9 +10,9 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - name: install google test
+      - name: install google test and other libraries
         shell: bash
-        run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo apt-get install doxygen && sudo apt-get install graphviz && sudo apt-get install clang-format && sudo apt-get install clang-tidy && sudo apt-get install cppcheck && sudo apt-get install boost && sudo cmake CMakeLists.txt && sudo make
+        run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo apt-get install doxygen && sudo apt-get install graphviz && sudo apt-get install clang-format && sudo apt-get install clang-tidy && sudo apt-get install cppcheck && sudo apt-get install libboost-all-dev && sudo cmake CMakeLists.txt && sudo make
       - name: Checkout Project
         uses: actions/checkout@v4.1.7
       - name: CMake Action
