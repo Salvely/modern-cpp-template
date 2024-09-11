@@ -1,3 +1,0 @@
-E:\CMake\bin\cmake.exe -E rm -f CMakeFiles\unit_tests.dir/objects.a
-D:\Program_Files\Mingw-w64\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\mingw64\bin\ar.exe qc CMakeFiles\unit_tests.dir/objects.a @CMakeFiles\unit_tests.dir\objects1.rsp
-D:\Program_Files\Mingw-w64\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\mingw64\bin\c++.exe -Wl,--whole-archive CMakeFiles\unit_tests.dir/objects.a -Wl,--no-whole-archive -o E:\projects\modern-cpp-template\bin\unit_tests.exe -Wl,--out-implib,E:\projects\modern-cpp-template\bin\libunit_tests.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\unit_tests.dir\linkLibs.rsp

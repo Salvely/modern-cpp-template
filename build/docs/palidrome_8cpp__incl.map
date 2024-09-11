@@ -1,9 +1,0 @@
-<map id="src/palidrome.cpp" name="src/palidrome.cpp">
-<area shape="rect" id="Node000001" title="the source file for palidrome" alt="" coords="93,5,217,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,94,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,35,82,73,79,69,135,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="117,80,192,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,33,158,64,152,64,152,33"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="216,80,270,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="172,30,218,68,214,72,168,35"/>
-</map>
