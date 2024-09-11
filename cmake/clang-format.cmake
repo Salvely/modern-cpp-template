@@ -56,7 +56,7 @@ endforeach()
 add_custom_target(format-check-changed
     COMMENT "Checking changed files in git"
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-    COMMAND ${_clangcheckpath}/../scripts/clang-format-check-changed.py 
+    COMMAND ${_clangcheckpath}/scripts/clang-format-check-changed.py 
     --file-extensions \"${CHANGED_FILE_EXTENSIONS}\"
     ${EXCLUDE_PATTERN_ARGS}
     --clang-format-bin ${CLANG_FORMAT_BIN}
