@@ -19,18 +19,16 @@ jobs:
         uses: threeal/cmake-action@v2.0.0
         with:
           generator: "Unix Makefiles"
-      - name: Start Building
-        run: cd build
       - name: Static Analysis
-        run: make analysis
+        run: cd build && make analysis
       - name: Format Code
         run: |
-          make format
-          make format-check
-          make format-check-changed
+          cd build && make format
+          cd build && make format-check
+          cd build && make format-check-changed
       - name: Unit Testing
-        run: make test
+        run: cd build && make test
       - name: Documentation
-        run: make doxygen
+        run: cd build && make doxygen
       - name: Installation
-        run: make install
+        run: cd build && make install
