@@ -79,7 +79,10 @@ endif()
 # apply clang-format to the project
 set(CLANG_FORMAT_BIN_NAME clang-format)
 set(CLANG_FORMAT_EXCLUDE_PATTERNS  "build/" ${CMAKE_BINARY_DIR})
-find_package(CLANG_FORMAT)
+find_package(CLANG_FORMAT REQUIRED)
+if(CLANG_FORMAT_FOUND)
+    message("clang-format found")
+endif()
 
 # apply boost testing to the project 
 add_library(google_test_lib src/reverse.cpp src/palidrome.cpp)
