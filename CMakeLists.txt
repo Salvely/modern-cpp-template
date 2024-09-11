@@ -53,6 +53,7 @@ endif()
 # Add a custom CMake Modules directory
 # set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+message(${CMAKE_MODULE_PATH})
 find_package(CPPCHECK)
 # static analysis. Should be before adding subprojects
 set (ALL_ANALYSIS_TARGETS)
