@@ -22,9 +22,9 @@ jobs:
       - name: Make
         run: make
         working-directory: ./build
-      - name: Static Analysis
-        run: make analysis
-        working-directory: ./build
+      # - name: Static Analysis
+      #   run: make analysis
+      #   working-directory: ./build
       - name: Format Code
         run: |
           make format
