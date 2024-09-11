@@ -51,14 +51,15 @@ endif()
 
 # apply cppcheck to the project
 # Add a custom CMake Modules directory
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
+# set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(CPPCHECK)
 # static analysis. Should be before adding subprojects
 set (ALL_ANALYSIS_TARGETS)
 add_subdirectory(subdir1)
 add_subdirectory(subdir2)
 add_subdirectory(subdir3)
-if( CPPCHECK_FOUND )
+if(CPPCHECK_FOUND)
     messgae("cppcheck found")
     add_custom_target(analysis)
     ADD_DEPENDENCIES(analysis ${ALL_ANALYSIS_TARGETS})
