@@ -62,7 +62,7 @@ endif()
 message(${CMAKE_MODULE_PATH})
 file(GLOB MODULE_SOURCES "${CMAKE_MODULE_PATH}/*.cmake")
 message("cmake modules are there: ${MODULE_SOURCES}")
-find_package(cppcheck REQUIRED)
+find_package(CppCheck REQUIRED)
 # static analysis. Should be before adding subprojects
 set (ALL_ANALYSIS_TARGETS)
 add_subdirectory(subdir1)
