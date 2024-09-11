@@ -20,15 +20,20 @@ jobs:
         with:
           generator: "Unix Makefiles"
       - name: Static Analysis
-        run: cd build && make analysis
+        working-directory: ${{github.workspace}}/build
+        run: make analysis
       - name: Format Code
+        working-directory: ${{github.workspace}}/build
         run: |
-          cd build && make format
-          cd build && make format-check
-          cd build && make format-check-changed
+          make format
+           make format-check
+          make format-check-changed
       - name: Unit Testing
-        run: cd build && make test
+        working-directory: ${{github.workspace}}/build
+        run: make test
       - name: Documentation
-        run: cd build && make doxygen
+        working-directory: ${{github.workspace}}/build
+        run: make doxygen
       - name: Installation
-        run: cd build && make install
+        working-directory: ${{github.workspace}}/build
+        run: make install
