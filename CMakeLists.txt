@@ -3,6 +3,12 @@ cmake_minimum_required(VERSION 3.20)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 99)
 
+# 添加 CMake 文件模块目录
+set(CMAKE_MODULE_PATH 
+    ${CMAKE_MODULE_PATH}
+    ${CMAKE_SOURCE_DIR}/cmake/modules
+)
+
 project(hello-cmake)
 # set(CMAKE_GENERATOR "MinGW Makefiles")
 
@@ -51,11 +57,7 @@ endif()
 
 # apply cppcheck to the project
 # Add a custom CMake Modules directory
-# 添加 CMake 文件模块目录
-set(CMAKE_MODULE_PATH 
-    ${CMAKE_MODULE_PATH}
-    ${CMAKE_SOURCE_DIR}/cmake/modules
-)
+
 find_package(CPPCHECK)
 # static analysis. Should be before adding subprojects
 set (ALL_ANALYSIS_TARGETS)
