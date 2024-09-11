@@ -1,0 +1,14 @@
+# Target labels
+ doxygen-awesome-css-populate
+# Source files and their labels
+E:/projects/modern-cpp-template/build/_deps/doxygen-awesome-css-subbuild/CMakeFiles/doxygen-awesome-css-populate
+E:/projects/modern-cpp-template/build/_deps/doxygen-awesome-css-subbuild/CMakeFiles/doxygen-awesome-css-populate.rule
+E:/projects/modern-cpp-template/build/_deps/doxygen-awesome-css-subbuild/CMakeFiles/doxygen-awesome-css-populate-complete.rule
+E:/projects/modern-cpp-template/build/_deps/doxygen-awesome-css-subbuild/doxygen-awesome-css-populate-prefix/src/doxygen-awesome-css-populate-stamp/doxygen-awesome-css-populate-build.rule
+E:/projects/modern-cpp-template/build/_deps/doxygen-awesome-css-subbuild/doxygen-awesome-css-populate-prefix/src/doxygen-awesome-css-populate-stamp/doxygen-awesome-css-populate-configure.rule
+E:/projects/modern-cpp-template/build/_deps/doxygen-awesome-css-subbuild/doxygen-awesome-css-populate-prefix/src/doxygen-awesome-css-populate-stamp/doxygen-awesome-css-populate-download.rule
+E:/projects/modern-cpp-template/build/_deps/doxygen-awesome-css-subbuild/doxygen-awesome-css-populate-prefix/src/doxygen-awesome-css-populate-stamp/doxygen-awesome-css-populate-install.rule
+E:/projects/modern-cpp-template/build/_deps/doxygen-awesome-css-subbuild/doxygen-awesome-css-populate-prefix/src/doxygen-awesome-css-populate-stamp/doxygen-awesome-css-populate-mkdir.rule
+E:/projects/modern-cpp-template/build/_deps/doxygen-awesome-css-subbuild/doxygen-awesome-css-populate-prefix/src/doxygen-awesome-css-populate-stamp/doxygen-awesome-css-populate-patch.rule
+E:/projects/modern-cpp-template/build/_deps/doxygen-awesome-css-subbuild/doxygen-awesome-css-populate-prefix/src/doxygen-awesome-css-populate-stamp/doxygen-awesome-css-populate-test.rule
+E:/projects/modern-cpp-template/build/_deps/doxygen-awesome-css-subbuild/doxygen-awesome-css-populate-prefix/src/doxygen-awesome-css-populate-stamp/doxygen-awesome-css-populate-update.rule

@@ -1,0 +1,1 @@
+  -L"D:/Program_Files/Git/usr/lib/googletest-distribution/lib"  "E:/projects/modern-cpp-template/lib/libboost_test_lib.a" -lpthread -lgtest -lgtest_main -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

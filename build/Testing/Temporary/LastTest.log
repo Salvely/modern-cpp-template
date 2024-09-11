@@ -1,0 +1,51 @@
+Start testing: Sep 11 14:29 中国标准时间
+----------------------------------------------------------
+1/2 Testing: test_boost
+1/2 Test: test_boost
+Command: "E:/projects/modern-cpp-template/bin/unit_tests.exe"
+Directory: E:/projects/modern-cpp-template/bin
+"test_boost" start time: Sep 11 14:29 中国标准时间
+Output:
+----------------------------------------------------------
+Running 3 test cases...
+
+*** No errors detected
+<end of output>
+Test time =   0.11 sec
+----------------------------------------------------------
+Test Passed.
+"test_boost" end time: Sep 11 14:29 中国标准时间
+"test_boost" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: test_google
+2/2 Test: test_google
+Command: "E:/projects/modern-cpp-template/bin/google_unit_tests.exe"
+Directory: E:/projects/modern-cpp-template/bin
+"test_google" start time: Sep 11 14:29 中国标准时间
+Output:
+----------------------------------------------------------
+Running main() from E:\Program Files\googletest-1.8.x\googletest\src\gtest_main.cc
+[==========] Running 3 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 3 tests from ReverseTests
+[ RUN      ] ReverseTests.simple
+[       OK ] ReverseTests.simple (0 ms)
+[ RUN      ] ReverseTests.empty
+[       OK ] ReverseTests.empty (0 ms)
+[ RUN      ] ReverseTests.is_palindrome
+[       OK ] ReverseTests.is_palindrome (0 ms)
+[----------] 3 tests from ReverseTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test case ran. (0 ms total)
+[  PASSED  ] 3 tests.
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"test_google" end time: Sep 11 14:29 中国标准时间
+"test_google" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 11 14:29 中国标准时间

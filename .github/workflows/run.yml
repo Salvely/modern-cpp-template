@@ -1,0 +1,34 @@
+name: Cpp project autobuild
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install google test
+        shell: bash
+        run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make
+      - name: Checkout Project
+        uses: actions/checkout@v4.1.7
+      - name: CMake Action
+        uses: threeal/cmake-action@v2.0.0
+        with:
+          generator: "Unix Makefiles"
+      - name: Static Analysis
+        run: make analysis
+      - name: Format Code
+        run: |
+          make format
+          make format-check
+          make format-check-changed
+      - name: Unit Testing
+        run: make test
+      - name: Documentation
+        run: make doxygen
+      - name: Installation
+        run: make install
