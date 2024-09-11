@@ -7,7 +7,7 @@ set(CMAKE_C_STANDARD 99)
 list(APPEND CMAKE_MODULE_PATH
  "${CMAKE_SOURCE_DIR}/cmake/modules/")
 
- message(${CMAKE_MODULE_PATH})
+message(${CMAKE_MODULE_PATH})
 
 project(hello-cmake)
 # set(CMAKE_GENERATOR "MinGW Makefiles")
@@ -59,6 +59,7 @@ endif()
 # Add a custom CMake Modules directory
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+message(${CMAKE_MODULE_PATH})
 find_package(cppcheck REQUIRED)
 # static analysis. Should be before adding subprojects
 set (ALL_ANALYSIS_TARGETS)
