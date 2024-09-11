@@ -10,6 +10,8 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
+      - name: Report environment
+        run: pwd ${{ github.workspace }} && ls ${{ github.workspace }}
       - name: install google test and other libraries
         shell: bash
         run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo apt-get install doxygen && sudo apt-get install graphviz && sudo apt-get install clang-format && sudo apt-get install clang-tidy && sudo apt-get install cppcheck && sudo apt-get install libboost-all-dev && sudo cmake CMakeLists.txt && sudo make
