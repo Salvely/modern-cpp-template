@@ -22,6 +22,9 @@ jobs:
       - name: Make
         run: make
         working-directory: ./build
+      - name: Pring files
+        run: ls -l
+        working-directory: ./build
       # - name: Static Analysis
       #   run: make analysis
       #   working-directory: ./build
