@@ -5,7 +5,7 @@ set(CMAKE_C_STANDARD 99)
 
 # 添加 CMake 文件模块目录
 list(APPEND CMAKE_MODULE_PATH
- "${CMAKE_SOURCE_DIR}/cmake/module/")
+ "${CMAKE_SOURCE_DIR}/cmake/modules/")
 
  message(${CMAKE_MODULE_PATH})
 
