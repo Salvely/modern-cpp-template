@@ -22,7 +22,7 @@ message("ALL_SOURCE_FILES: ${ALL_SOURCE_FILES}")
 add_custom_target(format
     COMMENT "Running clang-format to change files"
     COMMAND ${CLANG_FORMAT_BIN}
-    -style=file:".clang-format"
+    -style=file:${PROJECT_SOURCE_DIR}$/".clang-format"
     -i
     ${ALL_SOURCE_FILES}
 )
@@ -33,7 +33,7 @@ add_custom_target(format-check
     # Use ! to negate the result for correct output
     # COMMAND !
     ${CLANG_FORMAT_BIN}
-    -style=file:".clang-format"
+    -style=file:${PROJECT_SOURCE_DIR}$/".clang-format"
     -output-replacements-xml
     ${ALL_SOURCE_FILES}
     | grep -q "replacement offset" 
