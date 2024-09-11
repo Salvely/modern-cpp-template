@@ -30,8 +30,9 @@ jobs:
       #   working-directory: ./build
       - name: Format Code
         run: |
+          chmod +rwx ../cmake/scripts/clang-format-check-changed.py
           make format
-           make format-check
+          make format-check
           make format-check-changed
         working-directory: ./build
       - name: Unit Testing
