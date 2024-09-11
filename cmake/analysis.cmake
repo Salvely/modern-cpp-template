@@ -43,7 +43,7 @@ macro(add_analysis _target _sources)
             DEPENDS ${${_sources}}
             COMMENT "Running cppcheck: ${_target}"
             VERBATIM)
-        message("adding cppcheck analysys target for ${_target}")
+        message("adding cppcheck analysis target for ${_target}")
     endif()
 
 endmacro()
