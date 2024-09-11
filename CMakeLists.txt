@@ -77,6 +77,7 @@ if(CPPCHECK_FOUND)
 endif()
 
 # apply clang-format to the project
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 set(CLANG_FORMAT_BIN_NAME clang-format)
 set(CLANG_FORMAT_EXCLUDE_PATTERNS  "build/" ${CMAKE_BINARY_DIR})
 find_package(CLANG_FORMAT REQUIRED)
