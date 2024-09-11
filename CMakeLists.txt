@@ -58,7 +58,7 @@ endif()
 # apply cppcheck to the project
 # Add a custom CMake Modules directory
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+# list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 message(${CMAKE_MODULE_PATH})
 file(GLOB MODULE_SOURCES "${CMAKE_MODULE_PATH}/*.cmake")
 message("cmake modules are there: ${MODULE_SOURCES}")

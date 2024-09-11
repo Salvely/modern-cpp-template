@@ -1,41 +1,3 @@
-# # Locate cppcheck
-# #
-# # This module defines
-# #  CPPCHECK_FOUND, if false, do not try to link to cppcheck --- if (CPPCHECK_FOUND)
-# #  CPPCHECK_BIN, where to find cppcheck
-# #
-# # Exported argumets include
-# #   CPPCHECK_THREADS
-# #   CPPCHECK_ARG
-# #
-# # find the cppcheck binary
-# find_program(CPPCHECK_BIN NAMES cppcheck)
-
-# #
-# # Arguments are 
-# # -j use multiple threads (and thread count)
-# # --quite only show errors / warnings etc
-# # --error-exitcode The code to exit with if an error shows up
-# # --enabled  Comma separated list of the check types. Can include warning,performance,style
-# # Note nightly build on earth changes error-exitcode to 0
-# set (CPPCHECK_THREADS "-j 4" CACHE STRING "The -j argument to have cppcheck use multiple threads / cores")
-
-# set (CPPCHECK_ARG "${CPPCHECK_THREADS}" CACHE STRING "The arguments to pass to cppcheck. If set will overwrite CPPCHECK_THREADS")
-
-# # handle the QUIETLY and REQUIRED arguments and set YAMLCPP_FOUND to TRUE if all listed variables are TRUE
-# include(FindPackageHandleStandardArgs)
-# FIND_PACKAGE_HANDLE_STANDARD_ARGS(
-#     CPPCHECK 
-#     DEFAULT_MSG 
-#     CPPCHECK_BIN
-#     CPPCHECK_THREADS
-#     CPPCHECK_ARG)
-
-# mark_as_advanced(
-#     CPPCHECK_BIN  
-#     CPPCHECK_THREADS
-#     CPPCHECK_ARG)
-
 # - try to find cppcheck tool
 #
 # Cache Variables:
@@ -53,20 +15,22 @@
 #  CPPCHECK_WARN_REGULAR_EXPRESSION
 #  CPPCHECK_MARK_AS_ADVANCED - whether to mark our vars as advanced even
 #    if we don't find this program.
-#  CPPCHECK_IGNORED_PATHS
 #
 # Requires these CMake modules:
 #  FindPackageHandleStandardArgs (known included with CMake >=2.6.2)
 #
 # Original Author:
-# 2009-2010 Ryan Pavlik <rpavlik@iastate.edu> <abiryan@ryand.net>
-# http://academic.cleardefinition.com
+# 2009-2010 Rylie Pavlik <rylie@ryliepavlik.com>
+# https://ryliepavlik.com/
 # Iowa State University HCI Graduate Program/VRAC
 #
-# Copyright Iowa State University 2009-2010.
+# Copyright 2009-2010, Iowa State University
+#
 # Distributed under the Boost Software License, Version 1.0.
 # (See accompanying file LICENSE_1_0.txt or copy at
 # http://www.boost.org/LICENSE_1_0.txt)
+#
+# SPDX-License-Identifier: BSL-1.0
 
 file(TO_CMAKE_PATH "${CPPCHECK_ROOT_DIR}" CPPCHECK_ROOT_DIR)
 set(CPPCHECK_ROOT_DIR
@@ -80,7 +44,7 @@ set(_oldappbundlesetting ${CMAKE_FIND_APPBUNDLE})
 set(CMAKE_FIND_APPBUNDLE NEVER)
 
 if(CPPCHECK_EXECUTABLE AND NOT EXISTS "${CPPCHECK_EXECUTABLE}")
-  set(CPPCHECK_EXECUTABLE "notfound" CACHE PATH "" FORCE)
+	set(CPPCHECK_EXECUTABLE "notfound" CACHE PATH FORCE "")
 endif()
 
 # If we have a custom path, look there first.
@@ -103,10 +67,10 @@ set(CMAKE_FIND_APPBUNDLE ${_oldappbundlesetting})
 
 # Find out where our test file is
 get_filename_component(_cppcheckmoddir ${CMAKE_CURRENT_LIST_FILE} PATH)
-set(_cppcheckdummyfile "${_cppcheckmoddir}/Findcppcheck.cpp")
-if(NOT EXISTS "${_cppcheckdummyfile}")
+set(_cppchecktestfile "${_cppcheckmoddir}/Findcppcheck.cpp")
+if(NOT EXISTS "${_cppchecktestfile}")
 	message(FATAL_ERROR
-		"Missing file ${_cppcheckdummyfile} - should be alongside Findcppcheck.cmake, can be found at https://github.com/rpavlik/cmake-modules")
+		"Missing file ${_cppchecktestfile} - should be alongside Findcppcheck.cmake, can be found at https://github.com/rpavlik/cmake-modules")
 endif()
 
 function(_cppcheck_test_arg _resultvar _arg)
@@ -118,7 +82,7 @@ function(_cppcheck_test_arg _resultvar _arg)
 		"${CPPCHECK_EXECUTABLE}"
 		"${_arg}"
 		"--quiet"
-		"${_cppcheckdummyfile}"
+		"${_cppchecktestfile}"
 		RESULT_VARIABLE
 		_cppcheck_result
 		OUTPUT_QUIET
@@ -196,8 +160,7 @@ string(REGEX REPLACE ".* ([0-9]\\.([0-9]\\.[0-9])?)" "\\1"
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(cppcheck
-	VERSION_VAR CPPCHECK_VERSION
-	REQUIRED_VARS
+	DEFAULT_MSG
 	CPPCHECK_ALL
 	CPPCHECK_EXECUTABLE
 	CPPCHECK_POSSIBLEERROR_ARG
@@ -211,7 +174,3 @@ if(CPPCHECK_FOUND OR CPPCHECK_MARK_AS_ADVANCED)
 endif()
 
 mark_as_advanced(CPPCHECK_EXECUTABLE)
-
-if(CPPCHECK_FOUND AND NOT CPPCHECK_FIND_QUIETLY)
-  message(STATUS "Found cppcheck ${CPPCHECK_VERSION} in ${CPPCHECK_EXECUTABLE}")
-endif()
