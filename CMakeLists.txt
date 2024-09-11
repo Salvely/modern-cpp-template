@@ -4,11 +4,10 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 99)
 
 # 添加 CMake 文件模块目录
-set(CMAKE_MODULE_PATH 
-    ${CMAKE_MODULE_PATH}
-    ${CMAKE_SOURCE_DIR}/cmake/modules
-)
-message(${CMAKE_MODULE_PATH})
+list(APPEND CMAKE_MODULE_PATH
+ "${CMAKE_SOURCE_DIR}/cmake/module/")
+
+ message(${CMAKE_MODULE_PATH})
 
 project(hello-cmake)
 # set(CMAKE_GENERATOR "MinGW Makefiles")
@@ -59,7 +58,8 @@ endif()
 # apply cppcheck to the project
 # Add a custom CMake Modules directory
 
-find_package(cppcheck)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+find_package(cppcheck REQUIRED)
 # static analysis. Should be before adding subprojects
 set (ALL_ANALYSIS_TARGETS)
 add_subdirectory(subdir1)
