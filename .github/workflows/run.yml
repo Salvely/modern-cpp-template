@@ -20,20 +20,20 @@ jobs:
         with:
           generator: "Unix Makefiles"
       - name: Static Analysis
-        working-directory: ./build
         run: make analysis
-      - name: Format Code
         working-directory: ./build
+      - name: Format Code
         run: |
           make format
            make format-check
           make format-check-changed
+        working-directory: ./build
       - name: Unit Testing
-        working-directory: ./build
         run: make test
+        working-directory: ./build
       - name: Documentation
-        working-directory: ./build
         run: make doxygen
-      - name: Installation
         working-directory: ./build
+      - name: Installation
         run: make install
+        working-directory: ./build
