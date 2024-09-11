@@ -59,7 +59,7 @@ endif()
 # apply cppcheck to the project
 # Add a custom CMake Modules directory
 
-find_package(CPPCHECK)
+find_package(cppcheck)
 # static analysis. Should be before adding subprojects
 set (ALL_ANALYSIS_TARGETS)
 add_subdirectory(subdir1)
