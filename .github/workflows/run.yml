@@ -25,9 +25,9 @@ jobs:
       - name: Print build files
         run: ls -l && ls -l ..
         working-directory: ./build
-      # - name: Static Analysis
-      #   run: make analysis
-      #   working-directory: ./build
+      - name: Static Analysis
+        run: make analysis
+        working-directory: ./build
       - name: Format Code
         run: |
           chmod +rwx ../cmake/scripts/clang-format-check-changed.py
