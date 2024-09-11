@@ -61,7 +61,7 @@ endif()
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 message(${CMAKE_MODULE_PATH})
 file(GLOB MODULE_SOURCES "${CMAKE_MODULE_PATH}/*.cmake")
-message(${MODULE_SOURCES})
+message("${MODULE_SOURCES}")
 find_package(cppcheck REQUIRED)
 # static analysis. Should be before adding subprojects
 set (ALL_ANALYSIS_TARGETS)
