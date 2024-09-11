@@ -19,6 +19,8 @@ jobs:
         uses: threeal/cmake-action@v2.0.0
         with:
           generator: "Unix Makefiles"
+      - name: Make
+        run: make
       - name: Static Analysis
         run: make analysis
         working-directory: ./build
