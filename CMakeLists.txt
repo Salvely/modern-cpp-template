@@ -43,7 +43,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE hello_lib)
 target_link_libraries(${PROJECT_NAME} PRIVATE hello_shared_lib)
 target_link_libraries(${PROJECT_NAME} PRIVATE subdir1)
 target_link_libraries(${PROJECT_NAME} PRIVATE subdir2)
-target_link_libraries(${PROJECT_NAME} INTERFACE subdir3)
+target_link_libraries(${PROJECT_NAME} PUBLIC subdir3)
 target_include_directories(${PROJECT_NAME} PUBLIC ${subdir3_SOURCE_DIR}/include)
 
 # set(BOOST_ROOT "C:/Program Files/Boost/boost_1_84_0")
