@@ -52,8 +52,6 @@ endif()
 # apply cppcheck to the project
 # Add a custom CMake Modules directory
 # set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
-list(APPEND CMAKE_MODULE_PATH "./cmake/modules")
-message(${CMAKE_MODULE_PATH})
 find_package(CPPCHECK)
 # static analysis. Should be before adding subprojects
 set (ALL_ANALYSIS_TARGETS)
@@ -98,7 +96,7 @@ add_test(NAME google_test COMMAND google_test WORKING_DIRECTORY ${PROJECT_SOURCE
 
 # add doxygen to the project
 # add_subdirectory(bin)
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+# list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 include(Doxygen)
 find_package(doxygen)
 Doxygen(src docs)
