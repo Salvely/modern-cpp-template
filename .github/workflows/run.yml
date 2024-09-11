@@ -21,6 +21,7 @@ jobs:
           generator: "Unix Makefiles"
       - name: Make
         run: make
+        working-directory: ./build
       - name: Static Analysis
         run: make analysis
         working-directory: ./build
