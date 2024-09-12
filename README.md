@@ -23,6 +23,10 @@
 ![GitHub forks](https://img.shields.io/github/forks/scottydocs/README-template.md?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/scottydocs?style=social)
 
+> [!WARNING]
+>
+> This template does not enable static analysis, `cppcheck` failed with this template.
+
 > Short blurb about what your product does.
 
 Project name is a `<utility/tool/feature>` that allows `<insert_target_audience>` to do `<action/task_it_does>`.
