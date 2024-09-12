@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_COMPILER g++)
 
 # 添加 CMake 文件模块目录
 list(APPEND CMAKE_MODULE_PATH
