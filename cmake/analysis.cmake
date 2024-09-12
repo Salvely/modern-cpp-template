@@ -20,7 +20,7 @@ macro(add_analysis _target _sources)
 
         # remove the /usr/include header from cppcheck_includes, 
         message(cpp_includes: ${cppcheck_includes})
-        LIST(POP_FRONT ${cppcheck_includes})
+        list(POP_FRONT ${cppcheck_includes})
         message(cpp_includes: ${cppcheck_includes})
 
         # Add to the all target to have a high level "make analysis"
