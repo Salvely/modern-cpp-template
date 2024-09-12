@@ -8,6 +8,4 @@ target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
 # include the file with the function then call the macro
 # message("root directory: ${CMAKE_SOURCE_DIR}/cmake/analysis.cmake")
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/include)
-get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
-message("dirs: ${dirs}")
 add_analysis(${PROJECT_NAME} ${CMAKE_CURRENT_BINARY_DIR}/include)

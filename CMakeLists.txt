@@ -18,6 +18,9 @@ file(GLOB SOURCES "src/*.cpp")
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
+get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
+message("dirs: ${dirs}")
+
 # add static library
 add_library(hello_lib STATIC src/hello_static.cpp)
 target_include_directories(hello_lib PUBLIC ${PROJECT_SOURCE_DIR}/include/static)
