@@ -29,13 +29,13 @@ jobs:
         working-directory: ./build
       - name: Static Analysis
         run: |
-          chmod +rwx ../subdir1/src/subdir1.cpp
-          chmod +rwx ../subdir2/src/subdir2.cpp
+          sudo chmod 744 ../subdir1/src/subdir1.cpp
+          sudo chmod 744 ../subdir2/src/subdir2.cpp
           make analysis
         working-directory: ./build
       - name: Format Code
         run: |
-          chmod +rwx ../cmake/scripts/clang-format-check-changed.py
+          sudo chmod 744 ../cmake/scripts/clang-format-check-changed.py
           make format
           make format-check
         #   make format-check-changed
