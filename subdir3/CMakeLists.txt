@@ -7,4 +7,4 @@ set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 # target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_SOURCE_DIR}/cmake/analysis.cmake)
 # include the file with the function then call the macro
 # message("root directory: ${CMAKE_SOURCE_DIR}/cmake/analysis.cmake")
-add_analysis(${PROJECT_NAME} SOURCES)
+add_analysis(${PROJECT_NAME} HEADERS)
