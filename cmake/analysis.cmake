@@ -15,11 +15,11 @@ macro(add_analysis _target _sources)
         # Get the include files to also feed to cppcheck
         get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
         foreach(dir ${dirs})
-            LIST(APPEND cppcheck_includes "-I ${dir}")
+            LIST(APPEND cppcheck_includes " -I ${dir}")
         endforeach()
 
         # remove the /usr/include header from cppcheck_includes, 
-        LIST(REMOVE_ITEM ${cppcheck_includes} "/usr/include")
+        LIST(REMOVE_ITEM ${cppcheck_includes} "-I /usr/include")
         message(${cppcheck_includes})
 
         # Add to the all target to have a high level "make analysis"
