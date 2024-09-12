@@ -5,4 +5,6 @@ add_library(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include)
 # include the file with the function then call the macro
 include(${CMAKE_SOURCE_DIR}/cmake/analysis.cmake)
+get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
+message("dirs: ${dirs}")
 add_analysis(${PROJECT_NAME} SOURCES)
