@@ -31,7 +31,6 @@ jobs:
         run: |
           chmod +rwx ../subdir1/src/subdir1.cpp
           chmod +rwx ../subdir2/src/subdir2.cpp
-          chmod +rwx ../subdir3/src/subdir3.cpp
           make analysis
         working-directory: ./build
       - name: Format Code
