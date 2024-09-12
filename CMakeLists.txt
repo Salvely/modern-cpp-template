@@ -49,6 +49,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE subdir2)
 target_link_libraries(${PROJECT_NAME} PRIVATE subdir3)
 # target_include_directories(${PROJECT_NAME} PUBLIC ${subdir3_SOURCE_DIR}/include)
 
+get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
+message("dirs: ${dirs}")
+
 # set(BOOST_ROOT "C:/Program Files/Boost/boost_1_84_0")
 find_package(Boost REQUIRED COMPONENTS filesystem system unit_test_framework)
 if(Boost_FOUND)
@@ -58,6 +61,9 @@ if(Boost_FOUND)
 else()
     message (FATAL_ERROR "Cannot find Boost")
 endif()
+
+get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
+message("dirs: ${dirs}")
 
 # apply cppcheck to the project
 # Add a custom CMake Modules directory
