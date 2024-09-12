@@ -18,6 +18,9 @@ macro(add_analysis _target _sources)
             LIST(APPEND cppcheck_includes "-I ${dir}")
         endforeach()
 
+        # remove the /usr/include header from cppcheck_includes, 
+        LIST(REMOVE_ITEM ${dirs} "/usr/include")
+
         # Add to the all target to have a high level "make analysis"
         LIST(APPEND ALL_ANALYSIS_TARGETS "${_target}_analysis")
         set(ALL_ANALYSIS_TARGETS "${ALL_ANALYSIS_TARGETS}" PARENT_SCOPE)
