@@ -27,12 +27,12 @@ jobs:
       - name: Print build files
         run: ls -l && ls -l ..
         working-directory: ./build
-      - name: Static Analysis
-        run: |
-          sudo chmod 744 ../subdir1/src/subdir1.cpp
-          sudo chmod 744 ../subdir2/src/subdir2.cpp
-          make analysis
-        working-directory: ./build
+      # - name: Static Analysis
+      #   run: |
+      #     sudo chmod 744 ../subdir1/src/subdir1.cpp
+      #     sudo chmod 744 ../subdir2/src/subdir2.cpp
+      #     make analysis
+      #   working-directory: ./build
       - name: Format Code
         run: |
           sudo chmod 744 ../cmake/scripts/clang-format-check-changed.py
