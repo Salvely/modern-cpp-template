@@ -14,7 +14,7 @@ jobs:
         run: pwd ${{ github.workspace }}
       - name: install google test and other libraries
         shell: bash
-        run: sudo apt-get install g++ && sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo apt-get install doxygen && sudo apt-get install graphviz && sudo apt-get install clang-format && sudo apt-get install clang-tidy && sudo apt-get install cppcheck && sudo apt-get install libboost-all-dev && sudo cmake CMakeLists.txt && sudo make
+        run: sudo apt-get update && sudo apt-get upgrade && sudo apt-get install g++ && sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo apt-get install doxygen && sudo apt-get install graphviz && sudo apt-get install clang-format && sudo apt-get install clang-tidy && sudo apt-get install cppcheck && sudo apt-get install libboost-all-dev && sudo cmake CMakeLists.txt && sudo make
       - name: Checkout Project
         uses: actions/checkout@v4.1.7
       - name: CMake Action
@@ -27,12 +27,12 @@ jobs:
       - name: Print build files
         run: ls -l && ls -l ..
         working-directory: ./build
-      # - name: Static Analysis
-      #   run: |
-      #     sudo chmod 744 ../subdir1/src/subdir1.cpp
-      #     sudo chmod 744 ../subdir2/src/subdir2.cpp
-      #     make analysis
-      #   working-directory: ./build
+      - name: Static Analysis
+        run: |
+          sudo chmod 744 ../subdir1/src/subdir1.cpp
+          sudo chmod 744 ../subdir2/src/subdir2.cpp
+          make analysis
+        working-directory: ./build
       - name: Format Code
         run: |
           sudo chmod 744 ../cmake/scripts/clang-format-check-changed.py
