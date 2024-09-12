@@ -10,4 +10,4 @@ target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/include)
 get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
 message("dirs: ${dirs}")
-# add_analysis(${PROJECT_NAME} ${CMAKE_CURRENT_BINARY_DIR}/include)
+add_analysis(${PROJECT_NAME} ${CMAKE_CURRENT_BINARY_DIR}/include)
