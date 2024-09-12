@@ -20,6 +20,7 @@ macro(add_analysis _target _sources)
         endforeach()
         message("cppcheck_includes: ${cppcheck_includes}")
         LIST(POP_FRONT cppcheck_includes)
+        list(TRANSFORM cppcheck_includes REPLACE -I "-I ")
         message("cppcheck_includes: ${cppcheck_includes}")
 
         # Add to the all target to have a high level "make analysis"
