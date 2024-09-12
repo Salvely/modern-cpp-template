@@ -16,8 +16,11 @@ macro(add_analysis _target _sources)
         get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
 
         foreach(dir ${dirs})
-            LIST(APPEND cppcheck_includes " -I ${dir}")
+            LIST(APPEND cppcheck_includes -I${dir})
         endforeach()
+        message("cppcheck_includes: ${cppcheck_includes}")
+        LIST(POP_FRONT cppcheck_includes)
+        message("cppcheck_includes: ${cppcheck_includes}")
 
         # Add to the all target to have a high level "make analysis"
         LIST(APPEND ALL_ANALYSIS_TARGETS "${_target}_analysis")
